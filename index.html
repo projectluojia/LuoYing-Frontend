@@ -20,7 +20,27 @@
             perspective: 1200px;
             overflow: hidden;
             font-family: 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
-            background-color: #050505;
+            background-color: #f7f9ff;
+        }
+
+        /* 全局默认鼠标：暗蓝色全填充 + 细白边（防止在深色背景下看不清） */
+        html,
+        body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%230a7ba6" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, auto !important;
+        }
+
+        /* 悬停状态：涵盖链接/按钮/输入等交互元素 */
+        a,
+        button,
+        input,
+        select,
+        textarea,
+        .btn-nav,
+        .currency-item,
+        .terminal-module,
+        [role="button"],
+        label {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%230a7ba6" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, pointer !important;
         }
 
         /* ==========================================================================
@@ -34,7 +54,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: radial-gradient(circle at center, #1a080c 0%, #000000 100%);
+            background: radial-gradient(circle at center, #ffeef7 0%, #e7f2ff 100%);
             z-index: -1;
         }
 
@@ -82,12 +102,12 @@
 
         /* 玩家名片组件 */
         .player-card {
-            background: linear-gradient(90deg, rgba(30, 30, 30, 0.95) 0%, rgba(10, 10, 10, 0.7) 100%);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(232, 243, 255, 0.88) 100%);
             padding: 20px;
             position: relative;
-            border-left: 4px solid #fff;
-            color: #fff;
-            box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #ff9ec4;
+            color: #35507a;
+            box-shadow: -10px 10px 20px rgba(120, 150, 200, 0.32);
             pointer-events: auto;
         }
 
@@ -102,7 +122,7 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(138, 182, 255, 0.9);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -127,18 +147,18 @@
 
         .player-info .id {
             font-size: 0.8rem;
-            color: #aaa;
+            color: #6f7f9d;
             font-family: monospace;
         }
 
         /* 秘书助理台词展示区 */
         .secretary-voice {
-            background: rgba(10, 10, 10, 0.7);
+            background: rgba(255, 255, 255, 0.78);
             padding: 15px;
             font-size: 0.9rem;
             line-height: 1.6;
-            border-left: 2px solid #aaa;
-            color: #ddd;
+            border-left: 2px solid #8ab6ff;
+            color: #4a5f86;
             pointer-events: auto;
         }
 
@@ -179,11 +199,11 @@
             padding: 5px 15px;
             font-family: monospace;
             font-size: 1.1rem;
-            color: #fff;
+            color: #2d5fa8;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: -4px 4px 10px rgba(120, 150, 200, 0.28);
             cursor: pointer;
             pointer-events: auto;
             transform: translate3d(0px, 0px, 0px);
@@ -199,38 +219,38 @@
         }
 
         .currency-item span {
-            color: #aaa;
+            color: #6f7f9d;
             font-size: 0.9rem;
         }
 
         .currency-item:hover {
-            background-color: rgba(50, 50, 50, 0.8);
+            background-color: rgba(170, 215, 255, 0.78);
             transform: translate3d(-4px, -4px, 20px);
-            box-shadow: -8px 8px 15px rgba(0, 0, 0, 0.7);
+            box-shadow: -8px 8px 15px rgba(95, 155, 235, 0.42);
         }
 
         /* 终端核心模块容器 */
         .terminal-module {
-            background: linear-gradient(to right, rgba(20, 20, 20, 0.9), rgba(15, 15, 15, 0.8));
-            border-left: 5px solid #e7254e;
+            background: linear-gradient(to right, rgba(240, 249, 255, 0.96), rgba(210, 235, 255, 0.93));
+            border-left: 5px solid #4aa9ff;
             height: 140px;
-            color: #fff;
+            color: #2d5fa8;
             display: flex;
             align-items: center;
             padding: 0 40px;
             margin-bottom: 5px;
             cursor: pointer;
             position: relative;
-            box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: -5px 5px 20px rgba(120, 150, 200, 0.3);
             pointer-events: auto;
             transform: translate3d(0px, 0px, 10px);
             transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .terminal-module:hover {
-            background-color: rgba(30, 30, 30, 0.95);
+            background-color: rgba(180, 220, 255, 0.96);
             transform: translate3d(-8px, -8px, 40px);
-            box-shadow: -12px 12px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: -12px 12px 30px rgba(95, 155, 235, 0.45);
         }
 
         /* 终端模块内部 UI 元素 */
@@ -238,7 +258,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 1px solid rgba(231, 37, 78, 0.6);
+            border: 1px solid rgba(74, 169, 255, 0.75);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -261,7 +281,7 @@
         .terminal-text .zh {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #aaa;
+            color: #5b87bf;
             letter-spacing: 5px;
             margin-top: 5px;
         }
@@ -281,7 +301,7 @@
 
         /* 通用导航按钮组件 */
         .btn-nav {
-            background: rgba(30, 30, 30, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             height: 85px;
             display: flex;
             flex-direction: column;
@@ -289,7 +309,7 @@
             padding: 0 25px;
             cursor: pointer;
             position: relative;
-            box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: -4px 4px 15px rgba(120, 150, 200, 0.28);
             pointer-events: auto;
             transform: translate3d(0px, 0px, 0px);
             transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.25s ease, box-shadow 0.25s ease;
@@ -302,35 +322,35 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(74, 169, 255, 0.45);
             transition: 0.2s;
         }
 
         .btn-nav:hover {
-            background-color: rgba(60, 60, 60, 0.95);
+            background-color: rgba(186, 223, 255, 0.95);
             transform: translate3d(-6px, -6px, 25px);
-            box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.6);
+            box-shadow: -10px 10px 25px rgba(95, 155, 235, 0.44);
         }
 
         .btn-nav:hover::after {
-            background: #fff;
+            background: #4aa9ff;
             height: 3px;
         }
 
         /* 特定红色主题导航按钮 */
         .btn-nav.theme-red {
-            background: rgba(160, 15, 35, 0.85);
+            background: rgba(126, 191, 255, 0.9);
         }
 
         .btn-nav.theme-red:hover {
-            background-color: rgba(210, 20, 45, 1);
+            background-color: rgba(74, 169, 255, 1);
         }
 
         .btn-nav .en {
             font-size: 1.4rem;
             font-family: 'Times New Roman', serif;
             font-style: italic;
-            color: #ddd;
+            color: #2f5fa5;
         }
 
         .btn-nav.theme-red .en {
@@ -340,12 +360,12 @@
         .btn-nav .zh {
             font-size: 0.9rem;
             font-weight: bold;
-            color: #999;
+            color: #5c7fb3;
             margin-top: 4px;
         }
 
         .btn-nav.theme-red .zh {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.92);
         }
     </style>
 </head>
@@ -517,9 +537,7 @@
                     });
 
                     window.addEventListener("mousemove", e => {
-                        // 原仓库设定：按下鼠标拖拽时才产生渐变尾迹，或者开启全局尾迹
-                        // 为了网页体验，这里保留原仓库的拖拽判定
-                        if (!this.isDown) return;
+                        // 鼠标移动时直接产生尾迹（不再要求按下拖拽）
 
                         const p = getPos(e);
                         if (!this.lastPos) this.lastPos = p;
@@ -616,7 +634,7 @@
                         // 渲染尾迹
                         for (let i = this.trail.length - 1; i >= 0; i--) {
                             let t = this.trail[i];
-                            t.life -= (this.isDown ? 0.085 : 0.18) * frameScale;
+                            t.life -= 0.12 * frameScale;
                             if (t.life <= 0) this.trail.splice(i, 1);
                         }
 
@@ -717,9 +735,9 @@
             }
 
             // 3. 实例化并启动特效
-            // 可以在这里修改 RGB 颜色值，默认 '45,175,255' 为青蓝色
+            // 可以在这里修改 RGB 颜色值，当前为亮蓝色粒子效果
             window.baSparkEffect = new MouseSpark(canvas, {
-                color: '45,175,255',
+                color: '74,169,255',
                 scale: 1.5,
                 opacity: 1.0,
                 speed: 1.0
