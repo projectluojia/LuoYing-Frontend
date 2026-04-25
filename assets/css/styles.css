@@ -16,7 +16,7 @@ body {
 /* Cursor theme */
 html,
 body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%230a7ba6" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, auto !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%23ff91a4" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, auto !important;
 }
 
 a,
@@ -24,12 +24,12 @@ button,
 input,
 select,
 textarea,
+[role="button"],
+label,
 .btn-nav,
 .currency-item,
-.terminal-module,
-[role="button"],
-label {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%230a7ba6" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, pointer !important;
+.terminal-module {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="4,4 10,26 14,18 24,18" fill="%23ff91a4" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 4, pointer !important;
 }
 
 /* Background and 3D container */
