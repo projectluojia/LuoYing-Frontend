@@ -18,13 +18,15 @@ A polished single-page game-style web interface with pink-white-blue theming, br
 ├── assets
 │   ├── css
 │   │   └── styles.css
+│   ├── images
+│   │   └── icons
+│   │       ├── 图标_龙门币.png
+│   │       ├── 图标_合成玉.png
+│   │       └── 图标_源石.png
 │   └── js
 │       ├── main.js
 │       ├── mouse-spark.js
 │       └── ui-parallax.js
-├── 图标_龙门币.png
-├── 图标_合成玉.png
-└── 图标_源石.png
 ```
 
 ## Getting Started
@@ -48,6 +50,7 @@ Then open `http://localhost:8080`.
 - Parallax behavior: edit `assets/js/ui-parallax.js`
 - Particle effect parameters: edit `assets/js/main.js` and `assets/js/mouse-spark.js`
 - Cursor SVG: edit the cursor rules in `assets/css/styles.css`
+- Icon asset path convention in `index.html`: `./assets/images/icons/<filename>.png`
 
 ## Browser Compatibility
 
