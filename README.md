@@ -1,57 +1,73 @@
-# Arknights-Style Web UI (Modular)
+# React + TypeScript + Vite
 
-A polished single-page game-style web interface with pink-white-blue theming, bright-blue right-panel accents, custom SVG cursor, 3D parallax tilt, and mouse-driven particle effects. The project is refactored into modular HTML/CSS/JS files for maintainability and future feature expansion.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- Modular frontend architecture (`index.html` + separated CSS/JS modules)
-- Pink-white-blue visual theme with bright-blue interactive emphasis
-- Custom SVG cursor for default and interactive states
-- Mouse parallax tilt for layered 3D motion
-- Mouse trail and click burst particle effects on Canvas overlay
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Project Structure
+## React Compiler
 
-```text
-.
-├── index.html
-├── assets
-│   ├── css
-│   │   └── styles.css
-│   ├── images
-│   │   └── icons
-│   │       ├── 图标_龙门币.png
-│   │       ├── 图标_合成玉.png
-│   │       └── 图标_源石.png
-│   └── js
-│       ├── main.js
-│       ├── mouse-spark.js
-│       └── ui-parallax.js
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## Getting Started
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-This is a static frontend project with no build step required.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-1. Open `index.html` directly in a browser, or
-2. Serve the folder with a static server (recommended).
-
-Example:
-
-```bash
-python -m http.server 8080
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-Then open `http://localhost:8080`.
-
-## Configuration Notes
-
-- Visual styles: edit `assets/css/styles.css`
-- Parallax behavior: edit `assets/js/ui-parallax.js`
-- Particle effect parameters: edit `assets/js/main.js` and `assets/js/mouse-spark.js`
-- Cursor SVG: edit the cursor rules in `assets/css/styles.css`
-- Icon asset path convention in `index.html`: `./assets/images/icons/<filename>.png`
-
-## Browser Compatibility
-
-Modern Chromium, Firefox, and Safari versions are recommended for best Canvas and CSS transform performance.

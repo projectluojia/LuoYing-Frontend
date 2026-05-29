@@ -1,78 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arknights Web UI</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
-
-<body>
-    <div class="static-bg"></div>
-
-    <div class="scene">
-        <div class="ui-layer" id="uiLayer">
-            <aside class="left-panel">
-                <div class="player-card">
-                    <div class="level-container">
-                        <div class="level-circle"><span class="lv-num">106</span><span class="lv-text">LV</span></div>
-                        <div class="player-info">
-                            <div class="name">三角初华</div>
-                            <div class="id">ID: 857594593</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="secretary-voice">贵安，博士。今晚我们会举办一场化装舞会，为您预留了贵宾席位。如果您方便的话，欢迎前来参加。</div>
-            </aside>
-
-            <section class="right-panel">
-                <div class="currencies">
-                    <div class="currency-item">
-                        <img src="./assets/images/icons/图标_龙门币.png" class="currency-icon" alt="龙门币">
-                        2843414
-                    </div>
-                    <div class="currency-item">
-                        <img src="./assets/images/icons/图标_合成玉.png" class="currency-icon" alt="合成玉">
-                        80746
-                    </div>
-                    <div class="currency-item">
-                        <img src="./assets/images/icons/图标_源石.png" class="currency-icon" alt="源石">
-                        264
-                    </div>
-                </div>
-
-                <div class="terminal-module">
-                    <div class="sanity-ring"><span class="num">177</span></div>
-                    <div class="terminal-text">
-                        <div class="en">Terminal</div>
-                        <div class="zh">终 端</div>
-                    </div>
-                </div>
-
-                <div class="nav-grid two-cols">
-                    <div class="btn-nav"><span class="en">Squads</span><span class="zh">编队</span></div>
-                    <div class="btn-nav"><span class="en">Operator</span><span class="zh">干员 / 角色管理</span></div>
-                </div>
-
-                <div class="nav-grid">
-                    <div class="btn-nav theme-red"><span class="en">Store</span><span class="zh">采购中心</span></div>
-                    <div class="btn-nav theme-red"><span class="en">Recruit</span><span class="zh">公开招募</span></div>
-                    <div class="btn-nav theme-red"><span class="en">Headhunt</span><span class="zh">干员寻访</span></div>
-                </div>
-
-                <div class="nav-grid">
-                    <div class="btn-nav"><span class="en">Mission</span><span class="zh">任务</span></div>
-                    <div class="btn-nav"><span class="en">Base</span><span class="zh">基建</span></div>
-                    <div class="btn-nav"><span class="en">Depot</span><span class="zh">仓库</span></div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <script src="./assets/js/ui-parallax.js"></script>
-    <script src="./assets/js/mouse-spark.js"></script>
-    <script src="./assets/js/main.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>珞樱 AI</title>
+    <script src="/live2d/libs/live2dcubismcore.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
